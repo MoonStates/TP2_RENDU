@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/Calculette/CalculetteWS?wsdl" uri="wsdl/localhost_8080/Calculette/CalculetteWS.wsdl"/>
+    <system systemId="file:/home/alex/Documents/M1/OpenXtrem/tp2/HealthCareInteropService.wsdl" uri="wsdl/HealthCareInteropService.wsdl"/>
+    <system systemId="file:/home/alex/Documents/M1/OpenXtrem/tp2/HealthCareInteropService_schema1.xsd" uri="wsdl/HealthCareInteropService_schema1.xsd"/>
+</catalog>

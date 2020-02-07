@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions targetNamespace="http://healthcareinterop.m2icone.org/" name="HealthCareInteropService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:tns="http://healthcareinterop.m2icone.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://healthcareinterop.m2icone.org/" schemaLocation="HealthCareInteropService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="calculator">
+    <part name="parameters" element="tns:calculator"/>
+  </message>
+  <message name="calculatorResponse">
+    <part name="parameters" element="tns:calculatorResponse"/>
+  </message>
+  <message name="event">
+    <part name="parameters" element="tns:event"/>
+  </message>
+  <message name="eventResponse">
+    <part name="parameters" element="tns:eventResponse"/>
+  </message>
+  <portType name="HealthCareInteropService">
+    <operation name="calculator">
+      <input wsam:Action="http://healthcareinterop.m2icone.org/HealthCareInteropService/calculatorRequest" message="tns:calculator"/>
+      <output wsam:Action="http://healthcareinterop.m2icone.org/HealthCareInteropService/calculatorResponse" message="tns:calculatorResponse"/>
+    </operation>
+    <operation name="event">
+      <input wsam:Action="http://healthcareinterop.m2icone.org/HealthCareInteropService/eventRequest" message="tns:event"/>
+      <output wsam:Action="http://healthcareinterop.m2icone.org/HealthCareInteropService/eventResponse" message="tns:eventResponse"/>
+    </operation>
+  </portType>
+  <binding name="HealthCareInteropServicePortBinding" type="tns:HealthCareInteropService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="calculator">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="event">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="HealthCareInteropService">
+    <port name="HealthCareInteropServicePort" binding="tns:HealthCareInteropServicePortBinding">
+      <soap:address location="http://192.168.1.13/learning/2012-2013/tutorial/TP2/server/soap-server.php"/>
+    </port>
+  </service>
+</definitions>
+
